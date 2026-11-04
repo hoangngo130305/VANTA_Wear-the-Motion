@@ -1,0 +1,132 @@
+/* Small overrides that adapt the original single-page styles to the multi-page shop. */
+.ci h4{font-family:var(--body);font-size:15px;font-weight:600;letter-spacing:0;line-height:1.25}
+.cart__box #cartFoot .btn[disabled]{opacity:.45}
+.toast .tick--err{background:#ff4b1f;color:#fff}
+.search__box input[type=search]{-webkit-appearance:none;appearance:none}
+.hero .hero__card,.hero__nav{will-change:auto}
+/* keep the fixed header from covering page anchors */
+:target{scroll-margin-top:90px}
+
+/* ---- language switch ---- */
+.langsw{display:inline-flex;padding:3px;border-radius:99px;background:rgba(127,127,127,.18);gap:2px}
+.langsw button{padding:7px 12px;border-radius:99px;font:700 12px var(--body);letter-spacing:.06em;opacity:.7;transition:background .3s,color .3s,opacity .3s}
+.langsw button:hover{opacity:1}
+.langsw button.on{background:currentColor;opacity:1}
+.langsw button.on{background:var(--ink);color:var(--paper)}
+.hdr.is-top:not(.hdr--solid) .langsw button.on{background:var(--hero-fg,#fff);color:var(--ink)}
+.langsw--hdr{margin-right:4px}
+.langsw--corner{position:absolute;right:clamp(16px,3vw,40px);top:clamp(16px,3vw,32px);z-index:3}
+.auth__panel{position:relative}
+.langsw--adm{background:rgba(255,255,255,.1);color:#e9e6df;align-self:start}
+.langsw--adm button.on{background:var(--lime);color:var(--ink)}
+.langsw--top{margin-left:auto;background:rgba(12,12,13,.08);color:var(--ink)}
+.langsw--top button.on{background:var(--ink);color:var(--paper)}
+@media (max-width:900px){.langsw--hdr button{padding:6px 9px}}
+@media (max-width:480px){.langsw--hdr{display:none}}
+
+/* ---- uploaded logo ---- */
+.logo__img{height:28px;width:auto;max-width:150px;object-fit:contain}
+.auth__logo img{height:34px;width:auto;max-width:180px;object-fit:contain;display:block}
+.foot__social{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px}
+.foot__social a{padding:0;display:inline;font-size:14px;opacity:.85}
+
+/* ---- admin content editor ---- */
+.cms{display:grid;grid-template-columns:250px minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:1000px){.cms{grid-template-columns:1fr}}
+.cms__nav{position:sticky;top:18px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:14px;max-height:calc(100svh - 36px);overflow:auto}
+@media (max-width:1000px){.cms__nav{position:static;max-height:none}}
+.cms__nav h4{font:700 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 6px 8px}
+.cms__nav button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:9px 10px;border-radius:10px;font-size:14px;font-weight:500;text-align:left;transition:background .2s}
+.cms__nav button:hover{background:var(--paper2)}
+.cms__nav button.on{background:var(--ink);color:#fff}
+.cms__nav button i{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 2px rgba(201,255,47,.35)}
+.cms__usage{font-size:11px;color:var(--muted);padding:0 8px}
+.cms__main{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(16px,2.4vw,28px);min-width:0}
+.cms__head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.cms__head h2{font:800 24px var(--display);text-transform:uppercase;letter-spacing:-.03em}
+.cms__form{display:grid;gap:16px}
+.cms__field{display:grid;gap:6px}
+.cms__field label{display:grid;gap:6px}
+.cms__label{font-size:13px;font-weight:600}
+.cms__label em{font-style:normal;color:var(--muted);font-weight:400}
+.cms input[type=text],.cms input:not([type]),.cms input[type=number],.cms select,.cms textarea{width:100%;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font:500 14px var(--body);color:var(--ink);outline:0;transition:border-color .2s}
+.cms input:focus,.cms select:focus,.cms textarea:focus{border-color:var(--ink)}
+.cms textarea{resize:vertical;min-height:70px}
+.cms__loc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:760px){.cms__loc{grid-template-columns:1fr}}
+.cms__loc label{position:relative;display:block}
+.cms__lang{position:absolute;right:8px;top:8px;font:700 10px var(--body);letter-spacing:.08em;background:var(--paper2);border-radius:6px;padding:2px 6px;color:var(--muted);z-index:1;pointer-events:none}
+.cms__loc input{padding-right:40px}
+.cms__color{display:flex;gap:8px;align-items:center}
+.cms__color input[type=color]{width:44px;height:40px;padding:2px;border-radius:10px;border:1.5px solid var(--line);cursor:pointer;flex:none}
+.cms__img{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.cms__thumb{width:150px;aspect-ratio:4/3;border-radius:12px;border:1.5px dashed var(--line);background:repeating-conic-gradient(#f1efe9 0 25%,#fff 0 50%) 0 0/16px 16px;display:grid;place-items:center;overflow:hidden;color:var(--muted);font-size:12px;flex:none}
+.cms__thumb img{width:100%;height:100%;object-fit:contain}
+.cms__imgctl{display:grid;gap:8px;flex:1;min-width:220px}
+.cms__group{border:1px solid var(--line);border-radius:14px;padding:14px 16px 16px;display:grid;gap:14px}
+.cms__group legend{padding:0 8px;font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cms__list{display:grid;gap:10px}
+.cms__item{border:1px solid var(--line);border-radius:14px;background:#faf9f6;overflow:hidden}
+.cms__item summary{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;list-style:none}
+.cms__item summary::-webkit-details-marker{display:none}
+.cms__item summary::before{content:"▸";margin-right:8px;transition:transform .25s;color:var(--muted)}
+.cms__item[open] summary::before{transform:rotate(90deg)}
+.cms__item summary b{flex:1;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cms__ctl{display:flex;gap:2px}
+.cms__ctl button{width:30px;height:30px;border-radius:8px;font-size:14px;transition:background .2s}
+.cms__ctl button:hover:not(:disabled){background:var(--paper2)}
+.cms__ctl button:disabled{opacity:.3}
+.cms__ctl .danger{color:#d92d20}
+.cms__body{display:grid;gap:14px;padding:4px 14px 16px;border-top:1px solid var(--line)}
+.cms__body>.cms__field:first-child,.cms__body>*:first-child{margin-top:12px}
+
+/* ---- Vietnamese typography: stacked diacritics need more line height and a little less size ---- */
+html[lang=vi] h1,html[lang=vi] h2,html[lang=vi] h3{line-height:1.12}
+html[lang=vi] .h2{line-height:1.04}
+html[lang=vi] .hero__h1{line-height:1.06;font-size:clamp(32px,4.3vw,76px)}
+html[lang=vi] .hero__h1 .ln>span{white-space:nowrap}
+html[lang=vi] .hero__h1 .ln{padding:.16em 0 .06em;margin:-.08em 0}
+html[lang=vi] .orbit__name{line-height:.98;font-size:clamp(40px,5.2vw,88px)}
+html[lang=vi] .hero__card strong,html[lang=vi] .rack__sel b,html[lang=vi] .qv__info h3,html[lang=vi] .rw__phead h3{line-height:1.1}
+html[lang=vi] .story__big{line-height:1.12}
+html[lang=vi] .page__title{line-height:1.04}
+html[lang=vi] .btn{letter-spacing:0}
+.coupon .btn{white-space:nowrap;padding:0 18px;flex:none}
+
+/* ---- header mega menu ---- */
+.nav__shop i{display:inline-block;width:6px;height:6px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin-left:8px;position:relative;top:-2px;transition:transform .35s var(--ease)}
+.nav__shop.on{background:rgba(127,127,127,.16)}
+.nav__shop.on i{transform:rotate(225deg) translate(-2px,-2px)}
+.hdr.mega-open{background:var(--paper)!important;color:var(--ink)!important;backdrop-filter:none!important;box-shadow:0 1px 0 var(--line)!important}
+.hdr.mega-open .langsw button.on{background:var(--ink);color:var(--paper)}
+.mega__wrap{position:absolute;left:0;right:0;top:100%;height:0}
+.mega{position:absolute;left:0;right:0;top:0;background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line);box-shadow:0 36px 50px -30px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s,transform .4s var(--ease),visibility 0s .4s}
+.mega.open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.mega__in{max-width:1400px;margin:0 auto;padding:30px var(--pad) 38px;display:grid;grid-template-columns:repeat(4,minmax(120px,1fr)) minmax(250px,1.4fr);gap:clamp(18px,3vw,52px)}
+.mega__col{display:grid;gap:2px;align-content:start}
+.mega__col h4{font:700 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.mega__col a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;font-size:15px;font-weight:500;transition:transform .3s var(--ease)}
+.mega__col a:hover,.mega__col a:focus-visible{transform:translateX(6px)}
+.mega__col small{font-size:11px;color:var(--muted)}
+.mega__all{margin-top:8px;font-weight:700!important;text-decoration:underline;text-underline-offset:4px}
+.mega__all svg{width:16px;height:16px}
+.mega__promo{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;padding:14px;border-radius:20px;background:var(--paper2);transition:transform .45s var(--ease)}
+.mega__promo:hover{transform:translateY(-4px)}
+.mega__promo img{width:120px;height:140px;object-fit:contain;filter:drop-shadow(0 14px 14px rgba(0,0,0,.2))}
+.mega__promo span{display:grid;gap:3px}
+.mega__promo em{font-style:normal;align-self:start;width:max-content;padding:3px 10px;border-radius:99px;background:var(--lime);font:700 10px var(--body);letter-spacing:.08em;text-transform:uppercase}
+.mega__promo b{font:800 20px/1.05 var(--display);text-transform:uppercase;letter-spacing:-.03em}
+.mega__promo small{font-size:13px}
+.mega__promo s{opacity:.55}
+.mega__promo u{margin-top:6px;font-size:13px;font-weight:600}
+@media (max-width:900px){.mega__wrap{display:none}}
+.menu__sub{display:flex;flex-wrap:wrap;gap:6px 18px;margin:-4px 0 10px 2px}
+.menu__sub a{font:500 18px var(--body)!important;text-transform:none!important;letter-spacing:0!important;opacity:.7}
+.qv__cat{text-decoration:underline;text-underline-offset:3px;color:var(--ink);font-weight:700}
+
+/* ghost buttons fill with ink on hover (light surfaces) or paper (dark surfaces) — never with their own text colour */
+.btn--ghost{--hov:var(--ink)}
+.btn--ghost:hover{color:var(--paper)}
+.runway .btn--ghost,.news .btn--ghost,.cta-band .btn--ghost,.foot .btn--ghost{--hov:var(--paper)}
+.runway .btn--ghost:hover,.news .btn--ghost:hover,.cta-band .btn--ghost:hover,.foot .btn--ghost:hover{color:var(--ink)}
+.btn--ghost.btn--danger{--hov:#d92d20}
